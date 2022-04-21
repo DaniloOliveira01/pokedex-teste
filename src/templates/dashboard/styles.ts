@@ -27,4 +27,3 @@ export const Content = styled.div`
     color: #000;
   }
 `;
-
