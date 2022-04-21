@@ -93,7 +93,7 @@ export const HW = styled.div`
   border-radius: 8px;
   box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.10);
   display: flex;
-  padding: 4px;
+  padding: 2px;
   justify-content: center;
   align-items: center;
   text-align: center;
