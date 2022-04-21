@@ -1,7 +1,8 @@
 import { NextPage } from "next";
 import { ReactElement } from "react";
-import Layout from "@/templates/Layout";
 import Head from "next/head";
+
+import Layout from "@/templates/Layout";
 import { useAuth } from "@/contexts/auth";
 
 type DashboardPage = {
@@ -18,6 +19,7 @@ const Dashboard: NextPage & DashboardPage = () => {
           Dashboard
         </title>
       </Head>
+
       <h1>Dashboard</h1>
       <h3>{email}</h3>
     </>
@@ -31,4 +33,5 @@ Dashboard.getLayout = function getLayout(page: ReactElement) {
     </Layout>
   )
 }
+
 export default Dashboard;

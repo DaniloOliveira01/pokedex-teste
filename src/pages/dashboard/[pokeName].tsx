@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import client from "@/utils/api";
-import { GET_POKEMON_BY_NAME } from "@/querys/pokemons";
-import Layout from "@/templates/Layout";
+import { useRouter } from "next/router";
 import { ReactElement } from "react";
 
+import client from "@/utils/api";
+import { GET_POKEMON_BY_NAME } from "@/querys/pokemons";
 import {PokemonProps} from '@/types/pokemon'
+import Layout from "@/templates/Layout";
 import { PokeDetailsTemplates } from "@/templates/poke-details";
-import { useRouter } from "next/router";
 
 type PokemonPage = {
   getLayout: (page: ReactElement) => JSX.Element

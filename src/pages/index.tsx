@@ -1,11 +1,13 @@
 /* eslint-disable @next/next/no-title-in-document-head */
 import { NextPage } from 'next'
-import {Header} from '@/components/config-imports'
-import * as S from './styles';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { FormEvent } from 'react';
-import { useRouter } from 'next/router';
+
 import { useAuth } from '@/contexts/auth';
+
+import {Header} from '@/components/config-imports'
+import * as S from './styles';
 
 const Login: NextPage = () => {
   const router = useRouter();
