@@ -1,18 +1,53 @@
-import type { NextPage } from 'next'
+/* eslint-disable @next/next/no-title-in-document-head */
+import { NextPage } from 'next'
+import {Header} from '@/components/config-imports'
+import * as S from './styles';
+import Head from 'next/head';
+import { FormEvent } from 'react';
+import { useRouter } from 'next/router';
+import { useAuth } from '@/contexts/auth';
 
-import styled from "styled-components";
+const Login: NextPage = () => {
+  const router = useRouter();
+  const { login } = useAuth();
 
-const Title = styled.h1`
-  color: ${(props) => props.theme.colors.text};
-`;
+  const handleSubmit = (e:FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    login(e.currentTarget.email.value)
 
-const Home: NextPage = () => {
+    router.push('/dashboard')
+  }
+
   return (
     <>
-      <p>hello</p>
-      <Title>Title</Title>
-    </>
-  );
-};
+      <Head>
+        <title>
+          Login
+        </title>
+      </Head>
 
-export default Home;
+      <Header />
+      <S.Container>
+        <S.Content>
+          <S.LoginPoke>
+            <S.BgPokeball 
+            src="/image/pokeball.svg" 
+            />
+          <S.FormLogin onSubmit={handleSubmit}>
+          <S.InputLogin
+            type="email"
+            name='email'
+            placeholder='Seu melhor e-mail' 
+            />
+            <S.ButtonLogin>
+              Acessar
+            </S.ButtonLogin>
+            </S.FormLogin>
+          </S.LoginPoke>
+        </S.Content>
+      </S.Container>
+    </>
+  )
+}
+
+export default Login;
