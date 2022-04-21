@@ -35,7 +35,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         setEmail(emailStorage)
       }
     }
-
       getEmailFromStorage()
   }, [])
 
