@@ -6,8 +6,11 @@ const Switch = () => {
   return (
     <FormGroup>
       <FormControlLabel
-        control={<S.MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
-        label=""
+        control={<S.MaterialUISwitch 
+        sx={{ m: 1 }} 
+        defaultChecked 
+        />}
+        label
       />
     </FormGroup>
   );
