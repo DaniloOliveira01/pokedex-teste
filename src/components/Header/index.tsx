@@ -1,15 +1,15 @@
-import { Logo, LogoPokeball, LogoSettings, Nav, Settings } from './styles';
+import * as S from './styles';
 
 const Header = () => {
   return (
-    <Nav>
-      <LogoPokeball>
-        <Logo 
+    <S.Nav>
+      <S.LogoPokeball>
+        <S.Logo 
         src="/image/logo-pokedex.png" 
         />
-      </LogoPokeball>
-      <LogoSettings src="/image/settings.svg" />
-    </Nav>
+      </S.LogoPokeball>
+      <S.LogoSettings src="/image/settings.svg" />
+    </S.Nav>
   );
 };
 
