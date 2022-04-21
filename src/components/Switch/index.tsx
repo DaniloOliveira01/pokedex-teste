@@ -1,19 +1,35 @@
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import * as S from './styles';
+import Switch from 'react-switch'
+import * as S from './styles'
 
-const Switch = () => {
-  return (
-    <FormGroup>
-      <FormControlLabel
-        control={<S.MaterialUISwitch 
-        sx={{ m: 1 }} 
-        defaultChecked 
-        />}
-        label
-      />
-    </FormGroup>
-  );
+import { 
+  MdDarkMode as DarkModeIcon,
+  MdLightMode as LightModeIcon
+} from 'react-icons/md'
+
+type SwitchThemeProps = {
+  onToggleTheme: () => void
+  themeState: boolean
 }
 
-export default Switch
+export const SwitchTheme = ({ onToggleTheme, themeState }: SwitchThemeProps) => {
+  return (
+    <>
+      <Switch 
+        onChange={onToggleTheme}
+        checked={themeState}
+        offColor='#192a52'
+        onColor='#39cfe3'
+        checkedIcon={
+          <S.IconWrapper>
+            <LightModeIcon />
+          </S.IconWrapper>
+        }
+        uncheckedIcon={
+          <S.IconWrapper>
+            <DarkModeIcon/>
+          </S.IconWrapper>
+        }
+      />
+    </>
+  )
+}

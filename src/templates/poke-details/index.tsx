@@ -2,14 +2,12 @@ import Head from "next/head";
 import Image from "next/image";
 import { useState } from "react";
 
-import Switch from "@/components/Switch";
+import {SwitchTheme} from "@/components/Switch";
 import * as S from "./styles";
 
 import { typesColors } from "@/utils/types-and-colors";
 import { atributes } from '@/utils/atribute-and-colors';
 import {PokemonProps} from '@/types/pokemon';
-import { lightTheme } from "@/styles/themes/light-theme";
-import { darkTheme } from "@/styles/themes/dark-theme";
 
 import { 
   getFormattedCentimeter, 
@@ -17,6 +15,7 @@ import {
   getFormattedWeight, 
   getFormattedKilogramBR 
 } from "@/utils/getInfPokemon";
+import { useAppTheme } from "@/contexts/theme";
 
 export const PokeDetailsTemplates = ({
   name, 
@@ -28,6 +27,7 @@ export const PokeDetailsTemplates = ({
   stats,
 }: PokemonProps) => { 
   const headerText = `#${String(id).padStart(3,'0')} - ${name} ${" "}`
+  const {themeState, toogleTheme} = useAppTheme();
 
   return (
     <>
@@ -49,7 +49,10 @@ export const PokeDetailsTemplates = ({
             height={120}
           />
         </S.NamePokeDiv>
-          <Switch />
+          <SwitchTheme 
+            themeState={themeState}
+            onToggleTheme={toogleTheme}
+          />
       </S.Header>
     
       <S.Container>

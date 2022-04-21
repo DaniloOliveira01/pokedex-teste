@@ -3,16 +3,17 @@ import { NextPage } from 'next'
 import Head from 'next/head'
 import { 
   ReactElement, 
-  ReactNode 
+  ReactNode,
 } from 'react'
 
 import { ApolloProvider } from '@apollo/client'
 import client from '@/utils/api'
 import { AuthProvider } from '@/contexts/auth'
 
-import { lightTheme } from '@/styles/themes/light-theme'
 import { GlobalStyle } from '@/styles/GlobalStyles'
 import { ThemeProvider } from 'styled-components'
+import { lightTheme } from '@/styles/themes'
+import { AppThemeProvider } from '@/contexts/theme'
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode
@@ -35,11 +36,11 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
         />
       </Head>
       <GlobalStyle />
-      <ThemeProvider theme={lightTheme}>
-      <ApolloProvider client={client}>
-        {getLayout(<Component {...pageProps} />)}
-      </ApolloProvider>
-      </ThemeProvider>
+      <AppThemeProvider>
+        <ApolloProvider client={client}>
+          {getLayout(<Component {...pageProps} />)}
+        </ApolloProvider>
+      </AppThemeProvider>
     </AuthProvider>
   )
 }
