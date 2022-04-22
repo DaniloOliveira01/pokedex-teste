@@ -1,12 +1,17 @@
 import { useQuery } from "@apollo/client";
 import Link from "next/link";
+import { 
+  GET_POKEMONS, 
+  gqlVariables 
+} from "@/querys/pokemons";
 
-import {SearchPoke, LogoPoke} from '@/components/config-imports'
+import {
+  SearchPoke, 
+  LogoPoke
+} from '@/components/config-imports'
 
-//import {GET_POKEMONS, gqlVariables} from 'querys/pokemons'
-import { GET_POKEMONS, gqlVariables } from "@/querys/pokemons";
 
-import { Container, Description, HrStyle, PokeItem, PokeList, SearchWrapper } from "./styles";
+import * as S from "./styles";
 
 const Menu = () => {
   const { data } = useQuery(GET_POKEMONS, {
@@ -14,35 +19,35 @@ const Menu = () => {
   });
 
   return (
-    <Container>
+    <S.Container>
       <LogoPoke />
-      <Description>
+      <S.Description>
         Everything you wanted to know about your 
         favorite pocket monsters! 
-      </Description>
-      <SearchWrapper>
+      </S.Description>
+      <S.SearchWrapper>
         <SearchPoke />
-      </SearchWrapper>
+      </S.SearchWrapper>
 
-      <HrStyle />
+      <S.HrStyle />
       
-      <PokeList>
+      <S.PokeList>
         {data?.pokemons.results.map((poke: any) => {
           const linkText = `#${String(poke.id).padStart(3,'0')} - ${poke.name}`
           return (
-          <PokeItem 
+          <S.PokeItem 
           key={poke.id}
           >
             <Link 
-            href={`/dashboard/${poke.name}`}
+              href={`/dashboard/${poke.name}`}
             >
               {linkText}
             </Link>
-          </PokeItem>
+          </S.PokeItem>
           )
         })}
-      </PokeList>
-    </Container>
+      </S.PokeList>
+    </S.Container>
   );
 };
 

@@ -5,7 +5,7 @@ const Header = () => {
     <S.Nav>
       <S.LogoPokeball>
         <S.Logo 
-        src="/image/logo-pokedex.png" 
+          src="/image/logo-pokedex.png" 
         />
       </S.LogoPokeball>
       <S.LogoSettings src="/image/settings.svg" />

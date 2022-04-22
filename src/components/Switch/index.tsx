@@ -12,8 +12,7 @@ type SwitchThemeProps = {
 }
 
 export const SwitchTheme = ({ onToggleTheme, themeState }: SwitchThemeProps) => {
-  return (
-    <>
+  return ( 
       <Switch 
         onChange={onToggleTheme}
         checked={themeState}
@@ -30,6 +29,5 @@ export const SwitchTheme = ({ onToggleTheme, themeState }: SwitchThemeProps) => 
           </S.IconWrapper>
         }
       />
-    </>
   )
 }

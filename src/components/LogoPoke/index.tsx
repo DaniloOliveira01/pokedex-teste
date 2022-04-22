@@ -1,12 +1,12 @@
-import { Logo, LogoPokeball } from "./styles";
+import * as S from "./styles";
 
 const LogoPoke = () => {
   return (
-    <LogoPokeball>
-      <Logo 
-      src="/image/logo-pokedex.png"
+    <S.LogoPokeball>
+      <S.Logo 
+        src="/image/logo-pokedex.png"
       />
-    </LogoPokeball>
+    </S.LogoPokeball>
   );
 };
 

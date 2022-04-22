@@ -6,7 +6,7 @@ import {
 } from 'react'
 import { ThemeProvider as ThemeProviderStyled } from 'styled-components'
 
-import {lightTheme, darkTheme } from '@/styles/themes'
+import { lightTheme, darkTheme } from '@/styles/themes'
 
 type ThemeContextProps = {
   themeState: boolean

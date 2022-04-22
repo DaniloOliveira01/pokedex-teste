@@ -6,13 +6,11 @@ import {
   ReactNode,
 } from 'react'
 
-import { ApolloProvider } from '@apollo/client'
 import client from '@/utils/api'
+import { ApolloProvider } from '@apollo/client'
 import { AuthProvider } from '@/contexts/auth'
 
 import { GlobalStyle } from '@/styles/GlobalStyles'
-import { ThemeProvider } from 'styled-components'
-import { lightTheme } from '@/styles/themes'
 import { AppThemeProvider } from '@/contexts/theme'
 
 type NextPageWithLayout = NextPage & {
@@ -35,6 +33,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
           type="image/x-icon" 
         />
       </Head>
+
       <GlobalStyle />
       <AppThemeProvider>
         <ApolloProvider client={client}>

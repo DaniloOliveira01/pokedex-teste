@@ -1,13 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
-import { useState } from "react";
 
-import {SwitchTheme} from "@/components/Switch";
+import { SwitchTheme } from "@/components/Switch";
 import * as S from "./styles";
 
 import { typesColors } from "@/utils/types-and-colors";
 import { atributes } from '@/utils/atribute-and-colors';
-import {PokemonProps} from '@/types/pokemon';
+import { PokemonProps } from '@/types/pokemon';
 
 import { 
   getFormattedCentimeter, 
@@ -58,7 +57,7 @@ export const PokeDetailsTemplates = ({
       <S.Container>
         <S.ImagePoke>
           <S.PokeImg 
-          src={front_default} 
+            src={front_default} 
           />
         </S.ImagePoke>
     
@@ -84,9 +83,7 @@ export const PokeDetailsTemplates = ({
           </S.HW>
           <S.HW>
             <span>
-              <>
-              Weight: {getFormattedWeight(Number(weight))} / {getFormattedKilogramBR(Number(weight))}
-              </>
+                Weight: {getFormattedWeight(Number(weight))} / {getFormattedKilogramBR(Number(weight))}
             </span>
           </S.HW>      
         </S.DivHeightWeight>
@@ -103,7 +100,7 @@ export const PokeDetailsTemplates = ({
             </S.Atribute> )
           })}
         </S.AtributesDiv>
-        </S.Container>
+      </S.Container>
     </>
   );
 }
