@@ -13,6 +13,7 @@ export const LoginTemplate = () => {
 
   const handleSubmit = (e:FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+<<<<<<< HEAD
     const { email } = e.currentTarget
 
     if  (email.value.trim() === 0) {
@@ -21,6 +22,10 @@ export const LoginTemplate = () => {
 
     login(e.currentTarget.email.value)
         
+=======
+    login(e.currentTarget.email.value)
+    
+>>>>>>> ae41c6629fa0a0d8226dbc3aecdf387241bda789
     router.push('/dashboard')
   }
 
