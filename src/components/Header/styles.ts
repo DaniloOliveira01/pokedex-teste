@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import LogoPoke from '../../public/image/logo-pokedex.png'
 
 export const Nav = styled.header`
   position: fixed;
