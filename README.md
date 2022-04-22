@@ -2,8 +2,13 @@
 
 <img src="https://i.postimg.cc/C5DfrrFF/oi-GMs-CF-Imgur.png" width="350px" height="350px" />
 
-### 🪟 - Layout Project
+### ▶️ - How to use
+ - `git clone https://github.com/DaniloOliveirasx/pokedex-teste.git`
+ - `yarn` to install dependências
+ - `yarn dev` to run the app
 
+
+### 🪟 - Layout Project
 
 ##### Login
 <img src="https://i.imgur.com/Niig5N9.png" width="550px" height="300px" />
