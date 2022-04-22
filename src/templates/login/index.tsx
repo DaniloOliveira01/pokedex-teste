@@ -15,6 +15,10 @@ export const LoginTemplate = () => {
     e.preventDefault();
     login(e.currentTarget.email.value)
 
+    if(email.value.length === 0) {
+     alert("Digite algum email no input.")
+    }
+
     router.push('/dashboard')
   }
 
