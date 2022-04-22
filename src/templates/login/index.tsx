@@ -13,8 +13,14 @@ export const LoginTemplate = () => {
 
   const handleSubmit = (e:FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    login(e.currentTarget.email.value)
+    const { email } = e.currentTarget
 
+    if  (email.value.trim() === 0) {
+      return alert('Campo email é obrigatório')
+    }
+
+    login(e.currentTarget.email.value)
+        
     router.push('/dashboard')
   }
 
