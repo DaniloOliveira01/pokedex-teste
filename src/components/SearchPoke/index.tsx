@@ -1,7 +1,7 @@
 import * as S from "./styles";
 import { FaSearch } from 'react-icons/fa'
 
-const SearchPoke = () => {
+export const SearchPoke = () => {
   return (
     <S.SearchInput>
       <S.InputCustom 
@@ -11,5 +11,3 @@ const SearchPoke = () => {
     </S.SearchInput>
   );
 };
-
-export default SearchPoke;

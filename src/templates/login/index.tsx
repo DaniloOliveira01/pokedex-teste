@@ -2,10 +2,11 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { FormEvent } from 'react';
 
-import { useAuth } from '@/contexts/auth';
 
-import { Header } from '@/components/config-imports'
-import * as S from './styles'
+import { Header } from '@/components/Header';
+import * as S from './styles';
+
+import { useAuth } from '@/contexts/auth';
 
 export const LoginTemplate = () => {
   const router = useRouter();
