@@ -1,11 +1,17 @@
 import styled from "styled-components";
 
 export const Container = styled.main`
+  width: 100%;
   display: flex;
   justify-content: space-around;
   height: 100vh;
   color: #fff;
   padding-top: 16px;
+
+  @media (max-width: 960px) {
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const Content = styled.div`

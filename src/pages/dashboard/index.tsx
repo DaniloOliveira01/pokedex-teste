@@ -10,9 +10,7 @@ type DashboardPage = {
 }
 
 const Dashboard: NextPage & DashboardPage = () => {
-  return (
-    <DashboardTemplate />
-  );
+  return <DashboardTemplate />
 };
 
 Dashboard.getLayout = function getLayout(page: ReactElement) {

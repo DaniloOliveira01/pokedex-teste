@@ -3,13 +3,10 @@ import Image from 'next/image';
 
 import * as S from './styles'
 
-import { SwitchTheme } from "@/components/Switch";
 import { useAuth } from "@/contexts/auth";
-import { useAppTheme } from "@/contexts/theme";
 
 export const DashboardTemplate = () => {
   const { email } = useAuth();
-  const { themeState, toogleTheme } = useAppTheme();
 
   return (
     <>
@@ -36,10 +33,6 @@ export const DashboardTemplate = () => {
             height={250}
           />
         </S.Content>
-        <SwitchTheme
-          themeState={themeState}
-          onToggleTheme={toogleTheme}
-        />
       </S.Container>
   </>
   );

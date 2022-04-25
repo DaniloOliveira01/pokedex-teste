@@ -11,4 +11,18 @@ export const Content = styled.main`
     background-color: ${theme.secundaryBg};
   `}
   height: 100%;
+
+  @media (max-width: 960px) {
+    width: 100vw;
+  }
+`;
+
+export const IconHamburguer = styled.div`
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+
+  @media (min-width: 960px) {
+    display: none;
+  }
 `;

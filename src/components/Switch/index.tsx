@@ -16,8 +16,8 @@ export const SwitchTheme = ({ onToggleTheme, themeState }: SwitchThemeProps) => 
       <Switch 
         onChange={onToggleTheme}
         checked={themeState}
-        offColor='#192a52'
-        onColor='#39cfe3'
+        offColor="#192a52"
+        onColor="#39cfe3"
         checkedIcon={
           <S.IconWrapper>
             <LightModeIcon />
@@ -29,5 +29,5 @@ export const SwitchTheme = ({ onToggleTheme, themeState }: SwitchThemeProps) => 
           </S.IconWrapper>
         }
       />
-  )
-}
+  );
+};

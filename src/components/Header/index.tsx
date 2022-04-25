@@ -1,6 +1,6 @@
 import * as S from './styles';
 
-const Header = () => {
+export const Header = () => {
   return (
     <S.Nav>
       <S.LogoPokeball>
@@ -8,9 +8,10 @@ const Header = () => {
           src="/image/logo-pokedex.png" 
         />
       </S.LogoPokeball>
-      <S.LogoSettings src="/image/settings.svg" />
+      
+      <S.LogoSettings 
+        src="/image/settings.svg" 
+      />
     </S.Nav>
   );
 };
-
-export default Header;

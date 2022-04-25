@@ -10,10 +10,9 @@ import {
   LogoPoke
 } from '@/components/config-imports'
 
-
 import * as S from "./styles";
 
-const Menu = () => {
+export const Menu = () => {
   const { data } = useQuery(GET_POKEMONS, {
     variables: gqlVariables
   });
@@ -50,5 +49,3 @@ const Menu = () => {
     </S.Container>
   );
 };
-
-export default Menu;

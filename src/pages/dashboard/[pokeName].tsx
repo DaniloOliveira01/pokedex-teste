@@ -10,6 +10,7 @@ import { GET_POKEMON_BY_NAME } from "@/querys/pokemons";
 import { PokemonProps } from '@/types/pokemon'
 import Layout from "@/templates/Layout";
 import { PokeDetailsTemplates } from "@/templates/poke-details";
+import { Fallback } from "@/templates/fallback";
 
 type PokemonPage = {
   getLayout: (page: ReactElement) => JSX.Element
@@ -19,7 +20,7 @@ const Pokemon: NextPage<PokemonProps> & PokemonPage = (pokemon) => {
   const router = useRouter()
 
   if(router.isFallback) {
-    return <p>Loading...</p>
+    return <Fallback />
   }
 
   return <PokeDetailsTemplates { ...pokemon }/>

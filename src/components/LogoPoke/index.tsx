@@ -1,6 +1,6 @@
 import * as S from "./styles";
 
-const LogoPoke = () => {
+export const LogoPoke = () => {
   return (
     <S.LogoPokeball>
       <S.Logo 
@@ -9,5 +9,3 @@ const LogoPoke = () => {
     </S.LogoPokeball>
   );
 };
-
-export default LogoPoke;

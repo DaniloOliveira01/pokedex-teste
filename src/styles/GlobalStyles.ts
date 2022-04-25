@@ -14,6 +14,7 @@ html {
 body {
   background-color: #fff;
   color: #000 ;
+  overflow: hidden;
 
   font-family: 'Roboto', sans-serif;
   margin: 0;

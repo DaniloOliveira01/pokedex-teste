@@ -8,6 +8,10 @@ export const Header = styled.nav`
   padding: 0 36px;
   color: #fff;
   letter-spacing: 1.5;
+
+  @media (max-width: 960px) {
+    height: 180px;
+  }
 `;
 
 export const NamePokeDiv = styled.div`
