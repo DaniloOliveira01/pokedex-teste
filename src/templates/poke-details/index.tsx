@@ -6,7 +6,7 @@ import * as S from "./styles";
 
 import { typesColors } from "@/utils/types-and-colors";
 import { atributes } from '@/utils/atribute-and-colors';
-import { PokemonProps } from '@/types/pokemon';
+import { IPokemonProps } from "@/@types/pokemon";
 
 import { 
   getFormattedCentimeter, 
@@ -24,7 +24,7 @@ export const PokeDetailsTemplates = ({
   height, 
   weight,
   stats,
-}: PokemonProps) => { 
+}: IPokemonProps) => { 
   const headerText = `#${String(id).padStart(3,'0')} - ${name} ${" "}`
   const {themeState, toogleTheme} = useAppTheme();
 
@@ -95,8 +95,7 @@ export const PokeDetailsTemplates = ({
               color={atributes[stat.stat.name]?.color}
               key={stat.stat.name}
             >
-              {stat.base_stat} 
-              {atributes[stat.stat.name]?.abreviacao}
+              {stat.base_stat} {atributes[stat.stat.name]?.abreviacao}
             </S.Atribute> )
           })}
         </S.AtributesDiv>

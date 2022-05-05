@@ -6,14 +6,11 @@ import {
   MdLightMode as LightModeIcon
 } from 'react-icons/md'
 
-type SwitchThemeProps = {
-  onToggleTheme: () => void
-  themeState: boolean
-}
+import { ISwitchThemeProps } from '@/@types/type-components';
 
-export const SwitchTheme = ({ onToggleTheme, themeState }: SwitchThemeProps) => {
+export const SwitchTheme = ({ onToggleTheme, themeState }: ISwitchThemeProps) => {
   return ( 
-      <Switch 
+      <Switch
         onChange={onToggleTheme}
         checked={themeState}
         offColor="#192a52"

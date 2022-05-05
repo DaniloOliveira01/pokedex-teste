@@ -4,12 +4,10 @@ import { ReactElement } from "react";
 import Layout from "@/templates/Layout";
 
 import { DashboardTemplate } from "@/templates/dashboard";
+import { IDashboardPage } from "@/@types/type-pages";
 
-type DashboardPage = {
-  getLayout: (page: ReactElement) => JSX.Element
-}
 
-const Dashboard: NextPage & DashboardPage = () => {
+const Dashboard: NextPage & IDashboardPage = () => {
   return <DashboardTemplate />
 };
 

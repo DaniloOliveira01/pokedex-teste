@@ -5,18 +5,15 @@ import { GetStaticPaths,
 import { useRouter } from "next/router";
 import { ReactElement } from "react";
 
-import client from "@/utils/api";
-import { GET_POKEMON_BY_NAME } from "@/querys/pokemons";
-import { PokemonProps } from '@/types/pokemon'
+import client from "@/services/api";
+import { GET_POKEMON_BY_NAME } from "@/querys/pokemon";
+import { IPokemonProps } from '@/@types/pokemon'
 import Layout from "@/templates/Layout";
 import { PokeDetailsTemplates } from "@/templates/poke-details";
 import { Fallback } from "@/templates/fallback";
+import { IPokemonPage, IPokeNameParams } from "@/@types/type-pages";
 
-type PokemonPage = {
-  getLayout: (page: ReactElement) => JSX.Element
-}
-
-const Pokemon: NextPage<PokemonProps> & PokemonPage = (pokemon) => {
+const Pokemon: NextPage<IPokemonProps> & IPokemonPage = (pokemon) => {
   const router = useRouter()
 
   if(router.isFallback) {
@@ -41,12 +38,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-type PokeNameParams = {
-  pokeName: string
-}
-
 export const getStaticProps: GetStaticProps = async (context) => {
-  const { pokeName } = context.params as PokeNameParams
+  const { pokeName } = context.params as unknown as IPokeNameParams
   const response = await client
   .query({
     query: GET_POKEMON_BY_NAME,
@@ -56,13 +49,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
   })
   return {
     props: {
-      name: response.data.pokemon.name,
-      id: response.data.pokemon.id,
+      ...response.data.pokemon,
       front_default: response.data.pokemon.sprites.front_default,
-      height: response.data.pokemon.height,
-      weight: response.data.pokemon.weight,
-      types: response.data.pokemon.types,
-      stats: response.data.pokemon.stats
     }
   }
 }

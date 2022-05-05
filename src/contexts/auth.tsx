@@ -1,24 +1,18 @@
 import { 
   createContext,
-  ReactNode, 
   useContext, 
   useEffect, 
   useState
 } from 'react'
 
-type AuthProps = {
-  email: string
-  login: (email: string) => void
-  logout: () => void
-}
+import { 
+  IAuthProps, 
+  IAuthProviderProps 
+} from '@/@types/type-hooks'
 
-const AuthContext = createContext<AuthProps | null>(null)
+const AuthContext = createContext<IAuthProps | null>(null)
 
-type AuthProviderProps = {
-  children: ReactNode
-}
-
-export const AuthProvider = ({ children }: AuthProviderProps) => {
+export const AuthProvider = ({ children }: IAuthProviderProps) => {
   const [email, setEmail] = useState('')
 
   const login = (email: string) => {

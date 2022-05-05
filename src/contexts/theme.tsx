@@ -8,23 +8,16 @@ import { ThemeProvider as ThemeProviderStyled } from 'styled-components'
 
 import { lightTheme, darkTheme } from '@/styles/themes'
 
-type ThemeContextProps = {
-  themeState: boolean
-  toogleTheme: () => void
-}
+import { IThemeProviderProps, IThemeContextProps } from '@/@types/type-hooks'
 
-const AppThemeContext = createContext<ThemeContextProps | null>(null)
-
-type ThemeProviderProps = {
-  children: ReactNode
-}
+const AppThemeContext = createContext<IThemeContextProps | null>(null)
 
 const themes = {
   lightTheme,
   darkTheme
 }
 
-export const AppThemeProvider = ({ children }: ThemeProviderProps) => {
+export const AppThemeProvider = ({ children }: IThemeProviderProps) => {
   const [themeState, setThemeState] = useState(false)
 
   const toogleTheme = () => {

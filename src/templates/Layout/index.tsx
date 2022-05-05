@@ -5,11 +5,9 @@ import { Menu } from "@/components/Menu";
 
 import * as S from "./styles";
 
-type LayoutProps = {
-  children: ReactNode
-}
+import { ILayoutProps } from "@/@types/type-pages";
 
-const Layout = ({children}: LayoutProps) => {
+const Layout = ({children}: ILayoutProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
