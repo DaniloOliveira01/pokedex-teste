@@ -1,8 +1,7 @@
 import styled, { css } from "styled-components";
-import { ActiveProps } from "@/types/menu-mobile-props";
+import { IActiveProps } from "@/@types/type-components";
 
-
-export const Container = styled.div<ActiveProps>`
+export const Container = styled.div<IActiveProps>`
   ${({theme}) => css`
     background-color: ${theme.primaryBg};
   `}
@@ -66,45 +65,4 @@ export const HrStyle = styled.hr`
   height: 1px;
   border: none;
   background-color: #fae3e3;
-`;
-
-export const PokeList = styled.ul`
-  margin-top: 10px;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding-left: 30px;
-  overflow-y: scroll;
-  height: 60vh;
-  gap: 10px;
-
-::-webkit-scrollbar {
-  width: 4.5px;
-}
-
-::-webkit-scrollbar-track {
-  background: #ffff;
-  border-radius: 100px;
-}
- 
-
-::-webkit-scrollbar-thumb {
-  background: #000;
-  border-radius: 100px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-}
-`;
-
-export const PokeItem = styled.li`
-  text-transform: capitalize;
-  cursor: pointer;
-
-  &:hover {
-    font-weight: bold;
-    text-decoration: underline;
-  }
 `;

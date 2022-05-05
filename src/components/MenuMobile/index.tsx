@@ -11,18 +11,16 @@ import {
 import { IoClose } from 'react-icons/io5'
 import { SwitchTheme } from "../Switch";
 import { useAppTheme } from "@/contexts/theme";
-
-import { MenuMobileProps } from "@/types/menu-mobile-props";
+import { IMenuMobileProps } from "@/@types/type-components";
+import { PokeList } from "@/components/PokeList";
+import { useState } from "react";
 
 export const MenuMobile = ({ 
   isOpen, 
   setIsOpen 
-}: MenuMobileProps) => {
+}: IMenuMobileProps) => {
+  const [search, setSearch] = useState('');
   const { themeState, toogleTheme } = useAppTheme();
-
-  const { data } = useQuery(GET_POKEMONS, {
-    variables: gqlVariables
-  });
 
   return (
     <S.Container Active={isOpen}>
@@ -44,28 +42,18 @@ export const MenuMobile = ({
           favorite pocket monsters! 
         </S.Description>
         <S.SearchWrapper>
-          <SearchPoke />
+          <SearchPoke 
+            search={search}
+            setSearch={setSearch}
+          />
         </S.SearchWrapper>
 
         <S.HrStyle />
-        
-        <S.PokeList>
-          {data?.pokemons.results.map((poke: any) => {
-            const linkText = `#${String(poke.id).padStart(3,'0')} - ${poke.name}`
-            return (
-            <S.PokeItem 
-            key={poke.id}
-            >
-              <a 
-                onClick={() => setIsOpen(false)}
-                href={`/dashboard/${poke.name}`}
-              >
-                {linkText}
-              </a>
-            </S.PokeItem>
-            )
-          })}
-        </S.PokeList>
+
+        <PokeList 
+          search={search}
+          setIsOpen={setIsOpen}
+        />
       </S.Content>
     </S.Container>
   );
