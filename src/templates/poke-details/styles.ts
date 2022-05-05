@@ -44,7 +44,8 @@ export const ImagePoke = styled.article`
   box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.10);
 
   @media (max-width: 460px) {
-    width: 360px;
+    width: 330px;
+    height: 220px;
   }
 `;
 
@@ -70,7 +71,7 @@ export const TypePoke = styled.div`
   }
 
   @media (max-width: 460px) {
-    width: 360px;
+    width: 330px;
   }
 `;
 
@@ -97,7 +98,7 @@ export const DivHeightWeight = styled.div`
   gap: 10px;
 
   @media (max-width: 460px) {
-    width: 360px;
+    width: 330px;
   }
 `;
 
@@ -131,7 +132,7 @@ export const AtributesDiv = styled.div`
   padding: 8px;
 
   @media (max-width: 460px) {
-    width: 360px;
+    width: 330px;
   }
 `;
 
