@@ -50,6 +50,9 @@ export const typesColors = {
   "electric": {
     "color": "#e2e202db"
   },
+  "normal": {
+    "color": "#CD853F"
+  }
 }
 
 
