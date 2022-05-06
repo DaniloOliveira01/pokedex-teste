@@ -1,19 +1,15 @@
-import { SearchPoke } from "@/components/SearchPoke";
-import { LogoPoke } from "@/components/LogoPoke";
+import { SearchPoke } from "../SearchPoke";
+import { LogoPoke } from "../LogoPoke";
+import { SwitchTheme } from "../Switch";
+import { PokeList } from "../PokeList";
+
 import * as S from "./styles";
 
-import { useQuery } from "@apollo/client";
-import { 
-  GET_POKEMONS, 
-  gqlVariables 
-} from "@/querys/pokemons";
-
 import { IoClose } from 'react-icons/io5'
-import { SwitchTheme } from "../Switch";
+import { useState } from "react";
+
 import { useAppTheme } from "@/contexts/theme";
 import { IMenuMobileProps } from "@/@types/type-components";
-import { PokeList } from "@/components/PokeList";
-import { useState } from "react";
 
 export const MenuMobile = ({ 
   isOpen, 

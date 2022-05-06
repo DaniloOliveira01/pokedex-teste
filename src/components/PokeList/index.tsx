@@ -1,4 +1,4 @@
-import { GET_POKEMONS, gqlVariables } from "@/querys/pokemons";
+import { GET_POKEMONS, gqlVariables } from "../../querys/pokemons";
 import { useQuery } from "@apollo/client";
 import Link from "next/link";
 

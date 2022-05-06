@@ -1,11 +1,10 @@
-import {
-  SearchPoke, 
-  LogoPoke
-} from '@/components/config-imports'
+import { SearchPoke, } from "../SearchPoke";
+import { LogoPoke } from "../LogoPoke";
+import { PokeList } from "../PokeList";
 
 import * as S from "./styles";
 import { useState } from "react";
-import { PokeList } from "@/components/PokeList";
+
 
 export const Menu = () => {
   const [search, setSearch] = useState('');
