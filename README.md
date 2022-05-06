@@ -6,6 +6,7 @@
  - `git clone https://github.com/DaniloOliveirasx/pokedex-teste.git`
  - `yarn` to install dependências
  - `yarn dev` to run the app
+ - `yarn test` to run tests
 
 
 ### 🪟 - Layout Project
@@ -26,7 +27,11 @@
 - Typescript
 - GraphQL (API)
 - Apollo Client
+- Test-Library
+- Jest
 ##### 📚 Bibliotecas { <br>
 - React-switch
-- React-icons <br>}
+- React-icons
+- Nextjs-Progessbar
+ <br>}
 
